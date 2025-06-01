@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Agregado para mejor control */
+}
+
+body {
+    background-color: #ffff;
+    color: #172028;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.contenedor {
+    width: 100%; /* Ajuste para ocupar toda la pantalla */
+    max-width: 100%; /* Ajuste para eliminar márgenes blancos */
+    margin: 0 auto; /* Ajuste para centrar el contenido */
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas iguales */
+    grid-template-rows: auto auto; /* Dos filas automáticas */
+    grid-template-areas: 
+        "nav nav nav nav"
+        "banner banner banner banner"
+        "contenido contenido contenido contenido";
+}
+
+nav {
+    background-color: #45617e;
+    color: #ffff;
+    text-shadow: 3px 3px 10px rgba(1, 1, 1, 0.4);
+    grid-area: nav;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+nav h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.blanco {
+    color: #fff;
+}
+
+.verde {
+    color: #e07e2d;
+}
+
+/* Efecto hover para el botón */
+button:hover {
+    background-color: #f1ff2b;
+    color: #172028;
+    font-weight: 700;
+    border: 2px solid #172028; /* Añadido 'solid' para definir el estilo del borde */
+    transform: translateY(-2px);
+    box-shadow: 3px 5px 15px rgba(1, 1, 1, 0.6);
+}
+
+button {
+    background-color: #45617e;
+    color: #f1ff2b;
+    font-weight: 700;
+    border: 2px solid #f1ff2b; /* Añadido 'solid' para definir el estilo del borde */
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(1, 1, 1, 0.4); 
+    margin-left: auto; /* Mueve el botón a la derecha */
+}
+
+main.banner {
+    grid-area: banner;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas iguales */
+    gap: 30px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center; /* Alinea elementos verticalmente al centro */
+}
+
+main .texto {
+    grid-column: 1 / 3; /* Ocupa las dos primeras columnas (de 1 a 3 exclusivo) */
+    padding-right: 20px; /* Añade espacio a la derecha del texto */
+}
+
+main h1 {
+    text-align: left;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #172028;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+    padding: 20px 0; /* Ajuste para el espaciado */
+}
+
+main p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    max-width: 100%; /* Ajustado para ocupar el ancho disponible */
+    text-align: left;
+    padding: 0;
+}
+
+/* Imagen */
+main.banner > img {
+    grid-column: 3 / 5; /* Ocupa las dos últimas columnas (de 3 a 5 exclusivo) */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Área de contenido adicional - Eliminado el fondo gris */
+aside.contenido {
+    grid-area: contenido;
+    padding: 20px 0; /* Mantiene padding vertical pero elimina horizontal */
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/* Contenedor de las tarjetas de equipo */
+.main-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuye las tarjetas con espacio entre ellas */
+    gap: 30px; /* Espacio entre las tarjetas */
+    margin-top: 20px;
+}
+
+/* Tarjetas individuales */
+.inner-box {
+    flex: 0 0 calc(25% - 30px); /* Cada tarjeta ocupa aproximadamente 1/4 del espacio con margen */
+    max-width: calc(25% - 30px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Imágenes de miembros del equipo */
+.inner-box > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); 
+}
+
+/* Caja de información */
+.info-box {
+    background-color: #45617e;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); 
+}
+
+aside.contenido h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+    color: #172028;
+}
+
+/* Nombre y cargo */
+.info-box h5, .info-box h6 {
+    margin-bottom: 5px;
+}
+
+.info-box h5 {
+    color: #f1ff2b;
+    width: 70%; /* Ocupa el 70% del ancho para el nombre */
+    font-size: 1rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); 
+}
+
+.info-box h6 {
+    color: #ffff;
+    width: 70%; /* Ocupa el 70% del ancho para el cargo */
+    font-size: 0.85rem;
+    font-weight: normal;
+    
+}
+
+/* Iconos de redes sociales */
+.info-box .social-icons {
+    width: 30%; /* Ocupa el 30% del ancho para los iconos */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* Alinea verticalmente al centro */
+    gap: 20px; /* Aumentado el espacio entre iconos de 10px a 20px */
+    
+}
+
+.info-box .social-icons img {
+    width: 40px; /* Tamaño fijo para los iconos */
+    height: 40 px;
+    vertical-align: middle; /* Ayuda a alinear verticalmente con el texto */
+    padding-bottom: 10px;
+}
+
+/* Botón móvil - Visible solo en móvil */
+.mobile-button {
+    display: none; /* Oculto por defecto */
+}
+
+/* Diseño responsivo */
+@media screen and (max-width: 992px) {
+    .inner-box {
+        flex: 0 0 calc(50% - 15px); /* En tablets, 2 tarjetas por fila */
+        max-width: calc(50% - 15px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Nav en móvil */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    /* Ocultar botón del nav en móvil */
+    nav button {
+        display: none;
+    }
+
+    /* Botón fijo en móvil - Siempre visible */
+    .mobile-button {
+        display: block; /* Mostrar en móvil */
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        background-color: #45617e;
+        color: #f1ff2b;
+        border: 2px solid #f1ff2b;
+        padding: 12px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        font-size: 16px;
+        font-weight: bold;
+        /* Asegurar que siempre sea visible */
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Ajustar grid para móvil */
+    .contenedor {
+        margin: 10px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "nav"
+            "banner"
+            "contenido";
+        /* Añadir padding-bottom para evitar que el contenido quede detrás del botón fijo */
+        padding-bottom: 70px;
+    }
+    
+    /* Ajustar banner para móvil */
+    main.banner {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+    
+    main .texto {
+        grid-column: 1; /* Ocupa toda la columna */
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    main.banner > img {
+        grid-column: 1; /* Ocupa toda la columna */
+        margin-top: 20px;
+    }
+    
+    /* Ajustar tarjetas para móvil */
+    .inner-box {
+        flex: 0 0 100%; /* En móvil, 1 tarjeta por fila */
+        max-width: 100%;
+    }
+    
+    /* Mantener separación de iconos en móvil */
+    .info-box .social-icons {
+        gap: 20px;
+    }
+}
