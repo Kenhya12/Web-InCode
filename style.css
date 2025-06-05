@@ -10,6 +10,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* ESTRUCTURA PRINCIPAL */
 .contenedor {
     width: 100%; /* Ajuste para ocupar toda la pantalla */
     max-width: 100%; /* Ajuste para eliminar márgenes blancos */
@@ -24,6 +25,7 @@ body {
         "contenido contenido contenido contenido";
 }
 
+/* NAVEGACIÓN */
 nav {
     background-color: #45617e;
     color: #ffff;
@@ -52,16 +54,7 @@ nav h2 {
     color: #d85f05;
 }
 
-/* Efecto hover para el botón */
-button:hover {
-    background-color: #f1ff2b;
-    color: #172028;
-    font-weight: 700;
-    border: 2px solid #172028; /* Añadido 'solid' para definir el estilo del borde */
-    transform: translateY(-2px);
-    box-shadow: 3px 5px 15px rgba(1, 1, 1, 0.6);
-}
-
+/* BOTONES */
 button {
     background-color: #45617e;
     color: #f1ff2b;
@@ -74,6 +67,17 @@ button {
     margin-left: auto; /* Mueve el botón a la derecha */
 }
 
+/* Efecto hover para el botón */
+button:hover {
+    background-color: #fff;
+    color: #172028;
+    font-weight: 700;
+    border: 2px solid #172028; /* Añadido 'solid' para definir el estilo del borde */
+    transform: translateY(-2px);
+    box-shadow: 3px 5px 15px rgba(1, 1, 1, 0.6);
+}
+
+/* SECCIONES BANNER - ESTRUCTURA DE 4 COLUMNAS */
 main.banner {
     grid-area: banner;
     display: grid;
@@ -172,46 +176,83 @@ aside.contenido h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 2.4rem;
-     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); 
     color: #172028;
 }
 
 /* Nombre y cargo */
-.info-box h5, .info-box h6 {
-    margin-bottom: 5px;
+aside.contenido {
+    grid-area: contenido;
+    padding: 20px 50px;
+}
+
+.main-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.inner-box {
+    flex: 0 0 calc(25% - 30px);
+    max-width: calc(25% - 30px);
+    display: flex;
+    flex-direction: column;
+}
+
+.inner-box > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.info-box {
+    background-color: #45617e;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); 
 }
 
 .info-box h5 {
     color: #f1ff2b;
-    width: 70%; /* Ocupa el 70% del ancho para el nombre */
+    width: 70%;
     font-size: 1rem;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); 
 }
 
 .info-box h6 {
     color: #ffff;
-    width: 70%; /* Ocupa el 70% del ancho para el cargo */
+    width: 70%;
     font-size: 0.85rem;
     font-weight: normal;
-    
 }
 
-/* Iconos de redes sociales */
-.info-box .social-icons {
-    width: 30%; /* Ocupa el 30% del ancho para los iconos */
+.social-icons {
+    width: 30%;
     display: flex;
     justify-content: flex-end;
-    align-items: center; /* Alinea verticalmente al centro */
-    gap: 20px; /* Aumentado el espacio entre iconos de 10px a 20px */
-    
+    gap: 20px;
 }
 
-.info-box .social-icons img {
-    width: 40px; /* Tamaño fijo para los iconos */
-    height: 40 px;
-    vertical-align: middle; /* Ayuda a alinear verticalmente con el texto */
+.social-icons img {
+    width: 40px;
+    height: 40px;
     padding-bottom: 10px;
 }
+
+/* --- BOTÓN MÓVIL --- */
+.mobile-button {
+    display: none;
+}
+
 
 /* Botón móvil - Visible solo en móvil */
 .mobile-button {
@@ -247,9 +288,9 @@ aside.contenido h2 {
         bottom: 20px;
         right: 20px;
         z-index: 1000;
-        background-color: #45617e;
-        color: #f1ff2b;
-        border: 2px solid #f1ff2b;
+        background-color: #6ea2d9;
+        color: #ffff;
+        border: 2px solid #d85f05;
         padding: 12px 20px;
         border-radius: 25px;
         cursor: pointer;
