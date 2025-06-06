@@ -87,36 +87,28 @@
         <h2 class="portafolio">Portafolio</h2>
         <h3 class="crecimiento">¡Así hacemos Crecer a Nuestros Clientes!</h3>
         <section class="main-box">
-          <section
-            class="inner-box"
-            onclick="openModal('img/Proyectos/proyecto_1')"
-          >
+          <!-- Proyecto 1 -->
+          <section class="inner-box" data-full="img/Proyectos/proyecto_1.png">
             <img src="img/Proyectos/proyecto_1_recortada.png" alt="Proyecto1" />
             <div class="info-box">
               <h5>Proyecto №1</h5>
             </div>
           </section>
-          <section
-            class="inner-box"
-            onclick="openModal('img/Proyectos/proyecto_2')"
-          >
+          <!-- Proyecto 2 -->
+          <section class="inner-box" data-full="img/Proyectos/proyecto_2.jpg">
             <img src="img/Proyectos/proyecto_2_recortada.jpg" alt="Proyecto2" />
             <div class="info-box"><h5>Proyecto №2</h5></div>
           </section>
-          <section
-            class="inner-box"
-            onclick="openModal('img/Proyectos/proyecto_3')"
-          >
+          <!-- Proyecto 3 -->
+          <section class="inner-box" data-full="img/Proyectos/proyecto_3.png">
             <img
               src="img/Proyectos/proyecto_3_recortada.webp"
               alt="Proyecto3"
             />
             <div class="info-box"><h5>Proyecto №3</h5></div>
           </section>
-          <section
-            class="inner-box"
-            onclick="openModal('img/Proyectos/proyecto_4')"
-          >
+          <!-- Proyecto 4 -->
+          <section class="inner-box" data-full="img/Proyectos/proyecto_4.png">
             <img src="img/Proyectos/proyecto_4_recortada.png" alt="Proyecto1" />
             <div class="info-box"><h5>Proyecto №4</h5></div>
           </section>
@@ -127,6 +119,12 @@
     <a href="http://127.0.0.1:5500/webinncode/index.html">
       <button class="mobile-button">Nuestro Equipo</button></a
     >
+    <!-- ventana modal -->
+    <div id="modal" class="modal">
+      <span id="modal-close">&times;</span>
+      <img id="modal-img" src="" alt="Imagen completa del proyecto" />
+    </div>
+
     <script src="modal.js"></script>
   </body>
 </html>
